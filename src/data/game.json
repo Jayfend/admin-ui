@@ -1,0 +1,464 @@
+{
+    "items": [
+        {
+            "gameID": 1,
+            "name": "Grand Theft Auto V",
+            "price": 250000,
+            "discount": 0,
+            "description": "The best game in the world",
+            "gameplay": "Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.",
+            "genreName": [
+                "Action",
+                "Open-World",
+                "Multiplayer",
+                "Role-Playing"
+            ],
+            "genreIDs": [
+                1,
+                2,
+                3,
+                8
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-10T10:57:08.7108616",
+            "updatedDate": "2022-09-10T13:40:35.2257895",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": " Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "eb0d5b47-6651-4557-939e-f2d5a305802b.jpg",
+                "d0154dc6-a0dc-4c9c-be25-3c3f6b1007b4.jpg",
+                "31e5d254-896a-4ef8-8e8d-950883493a08.jpg",
+                "c066819c-fd0f-4368-b3d8-042b3cebcb40.jpg",
+                "4f6a02a8-3f11-47e6-92fd-c0c386dd86da.jpg"
+            ]
+        },
+        {
+            "gameID": 2,
+            "name": "Red Dead Redemption 2",
+            "price": 250000,
+            "discount": 20,
+            "description": "Back to the cowboy town",
+            "gameplay": "Winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores, RDR2 is the epic tale of outlaw Arthur Morgan and the infamous Van der Linde gang, on the run across America at the dawn of the modern age. Also includes access to the shared living world of Red Dead Online.",
+            "genreName": [
+                "Action",
+                "Open-World",
+                "Multiplayer"
+            ],
+            "genreIDs": [
+                1,
+                2,
+                3
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-10T10:57:08.7116492",
+            "updatedDate": "2022-09-10T13:41:20.1828689",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": " Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "aa35f52d-c91b-465d-bc9d-006d2055b87f.jpg",
+                "248c3984-00d2-4608-85e1-3ce80f9cef2a.jpg",
+                "6c7785a0-0e87-4e30-a8c5-0f2294f06b4e.jpg",
+                "65685b2f-e863-4602-95b9-034ab7ae5c02.jpg",
+                "3a7f7f0e-a6f8-4b4d-977b-98e301dd3ad7.jpg"
+            ]
+        },
+        {
+            "gameID": 3,
+            "name": "Thần Trùng",
+            "price": 750000,
+            "discount": 10,
+            "description": "Thần trùng",
+            "gameplay": "Thần Trùng | The Death là trò chơi phiêu lưu kinh dị tâm lý do 3 người Việt phát triển. Game lấy bối cảnh thành phố Hà Nội năm 2021.",
+            "genreName": [
+                "Horror",
+                "Role-Playing"
+            ],
+            "genreIDs": [
+                6,
+                8
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-10T13:39:15.4235169",
+            "updatedDate": "2022-09-10T13:39:15.4235262",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "e1b06c50-58b4-4aed-8282-425452848ee6.jpg",
+                "e837fab7-761f-40e5-955d-f8228176f764.jpg",
+                "2a2968c7-7db3-4209-85d1-8e721ad927fa.png",
+                "ca015df3-8e44-41af-afcb-5f4b49bb4ea5.jpg",
+                "73389e99-49e1-4e25-bbcf-5b9b290d21ff.jpg"
+            ]
+        },
+        {
+            "gameID": 4,
+            "name": "Forza Horizon 5",
+            "price": 700000,
+            "discount": 0,
+            "description": "Forza Horizon 5 2022",
+            "gameplay": "Blast off to the visually stunning, exhilarating Horizon Hot Wheels Park in the clouds high above Mexico. Race 10 amazing new cars on the fastest, most extreme tracks ever devised. Design, build, and share your own Hot Wheels adventure. Requires Forza Horizon 5 game, sold separately",
+            "genreName": [
+                "Open-World",
+                "Multiplayer",
+                "Sports & Racing"
+            ],
+            "genreIDs": [
+                2,
+                3,
+                7
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-10T14:38:22.4124631",
+            "updatedDate": "2022-09-10T14:38:22.4124724",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "46fbfeab-29fb-4b2d-9c15-e0ffe1aab1d1.jpg",
+                "e66f7af0-8e8a-43fa-a9f1-5b2b1e11b11a.jpg",
+                "95f036b9-fa3d-40b7-9113-3a50e2d9ebd3.jpg",
+                "ce61a9c6-4bc1-4ff0-bfd3-831fb41088a7.jpg",
+                "51e369b9-4c27-44e3-8cfd-65964adb482e.jpg"
+            ]
+        },
+        {
+            "gameID": 5,
+            "name": "Assassin's Creed Valhalla",
+            "price": 700000,
+            "discount": 10,
+            "description": "Become a legendary Viking on a quest for glory. Raid your enemies, grow your settlement, and build your political power.",
+            "gameplay": "In Assassin's Creed® Valhalla, become Eivor, a legendary Viking warrior on a quest for glory. Explore England's Dark Ages as you raid your enemies, grow your settlement, and build your political power.\r\nLead epic Viking raids against Saxon troops and fortresses.\r\nDual-wield powerful weapons and relive the visceral fighting style of the Vikings.\r\nChallenge yourself with the most varied collection of enemies ever in Assassin's Creed.\r\nShape the growth of your character with each choice and carve a path to glory.\r\nExplore a Dark Age open world, from the shores of Norway to the kingdoms of England.\r\nPersonalize your experience by growing your clan's settlement.",
+            "genreName": [
+                "Action",
+                "Open-World",
+                "Role-Playing"
+            ],
+            "genreIDs": [
+                1,
+                2,
+                8
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-11T19:03:24.0090269",
+            "updatedDate": "2022-09-11T19:03:24.0090391",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "145d556a-f964-4828-b74d-26e54fc4f942.jpg",
+                "77ed5ad0-b26a-4479-9e52-431f4b7acfe9.jfif",
+                "1709bf75-5e81-4383-921c-8b69ba3eafb7.jpg",
+                "eb078c0c-7a11-4513-862f-c40a567c8df0.jpg",
+                "4824a08b-b422-4287-b87d-5e7053801d08.jfif"
+            ]
+        },
+        {
+            "gameID": 6,
+            "name": "FAR CRY 6",
+            "price": 990000,
+            "discount": 0,
+            "description": "Dive into the gritty world of a modern-day guerrilla revolution to liberate a nation from its oppressive dictators.",
+            "gameplay": "Welcome to Yara, a tropical paradise frozen in time. As the dictator of Yara, Antón Castillo is intent on restoring his nation back to its former glory by any means, with his son, Diego, following in his bloody footsteps. Their oppressive rule has ignited a revolution.\r\nPlay as Dani Rojas, a local Yaran, as you fight alongside a modern-day guerrilla revolution to liberate Yara!\r\nFight against Castillo’s regime in the most expansive Far Cry® to date, through jungles, beaches, and Esperanza, the capital city of Yara.\r\nEmploy an arsenal of resolver weapons, backpacks, and vehicles to take down Castillo’s ruthless regime.",
+            "genreName": [
+                "Action",
+                "Open-World",
+                "Multiplayer",
+                "Role-Playing"
+            ],
+            "genreIDs": [
+                1,
+                2,
+                3,
+                8
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-11T19:10:47.6928819",
+            "updatedDate": "2022-09-11T19:10:47.6928908",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "ae76b3d0-8716-4840-a55e-fd61e003f953.jpg",
+                "fcf71a2b-8cee-4e4e-8d6e-1c37a71f835f.jpg",
+                "619adc4c-73f1-4859-9f1d-4fdaa0204269.jfif",
+                "7d9c85c8-d7bd-4124-bc81-78a9d781fc3c.jpg",
+                "0244ad2c-a612-4229-9604-be1c3318dd44.jpg"
+            ]
+        },
+        {
+            "gameID": 7,
+            "name": "Over Cooked 2",
+            "price": 212000,
+            "discount": 0,
+            "description": "Overcooked returns with a brand-new helping of chaotic cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to four players. Hold onto your aprons… it’s time to save the world again!",
+            "gameplay": "Overcooked returns with a brand-new helping of chaotic cooking action! Journey back to the Onion Kingdom and assemble your team of chefs in classic couch co-op or online play for up to four players. Hold onto your aprons… it’s time to save the world again!",
+            "genreName": [
+                "Multiplayer"
+            ],
+            "genreIDs": [
+                3
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-12T16:33:23.2358163",
+            "updatedDate": "2022-09-12T16:40:33.8322248",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "7edb6089-9831-46b8-af08-a8c22989a3fc.jfif",
+                "5e5f95a2-c5e4-4826-aaf8-fa229a5c7080.jpg",
+                "cfaee33b-76d5-466e-8f39-2edcc8711c21.jpg",
+                "ff630d5b-cb3f-4c44-86e8-740627c19c0b.jpg",
+                "fce74490-42a2-4a02-84be-e867504c56a1.jpg"
+            ]
+        },
+        {
+            "gameID": 8,
+            "name": "Cyber Punk 2077",
+            "price": 500000,
+            "discount": 10,
+            "description": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+            "gameplay": "Cyberpunk 2077 is an open-world, action-adventure RPG set in the dark future of Night City — a dangerous megalopolis obsessed with power, glamor, and ceaseless body modification.",
+            "genreName": [
+                "Action",
+                "Open-World",
+                "Action RPG",
+                "Role-Playing"
+            ],
+            "genreIDs": [
+                1,
+                2,
+                4,
+                8
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-13T17:38:41.8431219",
+            "updatedDate": "2022-09-13T17:38:41.8431318",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "b31600b9-7f3a-4d6c-bc68-f261e68c02ad.jpg",
+                "17cca647-e1ea-4331-978f-7f2baa189ded.jpg",
+                "adf5d0e8-b87c-4762-9775-68a22a6b0de5.jpg"
+            ]
+        },
+        {
+            "gameID": 9,
+            "name": "Fall guys",
+            "price": 56000,
+            "discount": 0,
+            "description": "Fall Guys is a free, cross-platform, massively multiplayer, party royale game where you and your fellow contestants compete through escalating rounds of absurd obstacle course chaos until one lucky victor remains!",
+            "gameplay": "Fall Guys is a free, cross-platform, massively multiplayer, party royale game where you and your fellow contestants compete through escalating rounds of absurd obstacle course chaos until one lucky victor remains!",
+            "genreName": [
+                "Multiplayer"
+            ],
+            "genreIDs": [
+                3
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-13T18:47:45.7611294",
+            "updatedDate": "2022-09-13T18:47:45.761136",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "01293030-6678-431f-a1af-a5f9c31b683c.jfif",
+                "4c14576f-d665-440f-a54c-084a738625a5.jpg",
+                "e25f55c0-dfed-4d9a-b90d-9b6c2a545344.jpg",
+                "707077d7-8ea7-40f2-b8a4-50cdc36f6291.jpg",
+                "ad3257b1-c671-4283-bdc2-df1ee7c486c1.jpg"
+            ]
+        },
+        {
+            "gameID": 10,
+            "name": "Just Cause 4 ",
+            "price": 2000000,
+            "discount": 37,
+            "description": "Rogue agent Rico Rodriguez journeys to Solis, a huge South American world home of conflict, oppression and extreme weather conditions. Strap into your wingsuit, equip your fully customizable grappling hook, and get ready to bring the thunder!",
+            "gameplay": "Rogue agent Rico Rodriguez journeys to Solis, a huge South American world home of conflict, oppression and extreme weather conditions. Strap into your wingsuit, equip your fully customizable grappling hook, and get ready to bring the thunder!",
+            "genreName": [
+                "Action",
+                "Open-World",
+                "Action RPG",
+                "Role-Playing"
+            ],
+            "genreIDs": [
+                1,
+                2,
+                4,
+                8
+            ],
+            "status": "Active",
+            "createdDate": "2022-09-13T18:55:07.5013843",
+            "updatedDate": "2022-09-13T18:55:07.501391",
+            "srm": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz",
+                "memory": "4 GB RAM",
+                "graphics": "NVIDIA 9800 GT 1GB / AMD HD 4870 1GB (DX 10, 10.1, 11)",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "srr": {
+                "os": "Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1",
+                "processor": "Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)",
+                "memory": "8 GB RAM",
+                "graphics": "NVIDIA GTX 660 2GB / AMD HD 7870 2GB",
+                "storage": "72 GB available space",
+                "additionalNotes": "72 GB available space",
+                "soundcard": "100% DirectX 10 compatible"
+            },
+            "listImage": [
+                "fa0480d9-6c0b-4093-ac08-a7d8fc0c319e.jpg",
+                "5c463a85-b2aa-4453-82af-98a8f4e2c4b5.jpg",
+                "8a5491f0-6360-4fed-8618-88c81e9aad75.jpg",
+                "438ad474-17ad-4b91-8584-c1e1b8ae1356.jpg",
+                "429ba598-9372-4cdc-a5a0-a4b560a175e6.jpg"
+            ]
+        }
+    ],
+    "pageIndex": 1,
+    "pageSize": 10,
+    "totalRecords": 13,
+    "pageCount": 2
+}

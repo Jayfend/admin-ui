@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: var(--store-bg-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 3.2rem calc((100% - var(--content-size) - var(--sidebar-width) * 2) / 2);
+}
+
+.content {
+  flex: 1;
+  min-height: 545px;
+  height: auto;
+  background-color: transparent;
+  margin: 0 var(--sidebar-width);
+}

@@ -1,0 +1,113 @@
+.toast {
+  width: auto;
+  min-width: 35rem;
+  display: flex;
+  min-height: 7.5rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 1;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 2px rgb(69, 69, 69);
+
+  transition: 0.2s;
+  animation: SlideShow 2s forwards;
+}
+
+.toast:hover {
+  transition: 0.2s;
+  transform: scale(0.95);
+  box-shadow: 0px 0px 3px gray;
+}
+
+.success {
+  background-color: #83bd92;
+  border-left: 6px solid green;
+}
+
+.warning {
+  background-color: #bda883;
+  border-left: 6px solid orange;
+}
+
+.error {
+  background-color: #bd8383;
+  border-left: 6px solid red;
+}
+
+.message {
+  font-size: 1.6rem;
+}
+
+.icon {
+  font-size: 1.6rem;
+  margin-right: 1rem;
+}
+
+.countdown {
+  height: 4px;
+  width: 100%;
+  border-radius: 4px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  animation: CountDown 3.25s forwards;
+}
+
+.success>.countdown {
+  background-color: green;
+}
+
+.warning>.countdown {
+  background-color: orange;
+}
+
+.error>.countdown {
+  background-color: red;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes CountDown {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0%;
+  }
+}
+
+@keyframes SlideShow {
+  0% {
+    transform: translateX(100%);
+  }
+
+  25% {
+    transform: translateX(-10%);
+  }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-2rem);
+  }
+}
