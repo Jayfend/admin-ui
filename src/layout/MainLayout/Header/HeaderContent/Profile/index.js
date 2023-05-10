@@ -8,7 +8,7 @@ import { Avatar, Box, ButtonBase, CardContent, ClickAwayListener, Grid, IconButt
 import MainCard from 'components/MainCard';
 import Transitions from 'components/@extended/Transitions';
 // assets
-import avatar1 from 'assets/images/users/avatar-1.png';
+import avatar from 'assets/images/users/avatar-2.png';
 import { LogoutOutlined } from '@ant-design/icons';
 
 import * as userServices from 'services/userServices';
@@ -70,7 +70,7 @@ const Profile = () => {
                 onClick={handleToggle}
             >
                 <Stack direction="row" spacing={2} alignItems="center" sx={{ p: 0.5 }}>
-                    <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
+                    <Avatar alt="profile user" src={avatar} sx={{ width: 32, height: 32 }} />
                     <Typography variant="subtitle1">{admin}</Typography>
                 </Stack>
             </ButtonBase>
@@ -112,7 +112,7 @@ const Profile = () => {
                                             <Grid container justifyContent="space-between" alignItems="center">
                                                 <Grid item>
                                                     <Stack direction="row" spacing={1.25} alignItems="center">
-                                                        <Avatar alt="profile user" src={avatar1} sx={{ width: 32, height: 32 }} />
+                                                        <Avatar alt="profile user" src={avatar} sx={{ width: 32, height: 32 }} />
                                                         <Stack>
                                                             <Typography variant="h6">Admin</Typography>
                                                             <Typography variant="body2" color="textSecondary">

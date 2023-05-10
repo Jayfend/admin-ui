@@ -60,7 +60,7 @@ export default function GameTable() {
     }, [reLoad]);
     const rows = ro.map((value, index) => {
         return createData(
-            value.gameID,
+            value.id,
             value.name,
             value.price,
             value.discount + ' %',
@@ -89,9 +89,9 @@ export default function GameTable() {
     };
 
     const handleClick = (event, name, gameID) => {
-        if (confirm('Bạn chắc chắn xoá game: ' + name + '?')) {
-            deleteApi(gameID);
-        }
+        // if (confirm('Bạn chắc chắn xoá game: ' + name + '?')) {
+        //     deleteApi(gameID);
+        // }
     };
     const onClickGenre = (event, id) => {
         navigate('/edit-game-genre/' + id);

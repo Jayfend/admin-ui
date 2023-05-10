@@ -19,9 +19,9 @@ export default function BestSeller() {
     }, []);
 
     const onClickDelete = (event, name, id) => {
-        if (confirm('Are you sure you want to delete ' + name + '?')) {
-            deleteApi(id);
-        }
+        // if (confirm('Are you sure you want to delete ' + name + '?')) {
+        //     deleteApi(id);
+        // }
     };
 
     const onClickEdit = (event, id) => {

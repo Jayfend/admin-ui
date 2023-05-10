@@ -17,7 +17,7 @@ const DrawerHeader = ({ open }) => {
         <DrawerHeaderStyled theme={theme} open={open}>
             <Stack direction="row" spacing={1} alignItems="center">
                 <Logo />
-                <Chip
+                {/* <Chip
                     // app version
                     label="s.v.1.1.0"
                     size="small"
@@ -26,7 +26,7 @@ const DrawerHeader = ({ open }) => {
                     href="https://github.com/VuongHuy2k1/Sortware_Shop"
                     target="_blank"
                     clickable
-                />
+                /> */}
             </Stack>
         </DrawerHeaderStyled>
     );

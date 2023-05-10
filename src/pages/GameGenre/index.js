@@ -26,10 +26,10 @@ const GameGenre = () => {
         };
         profileApi();
     }, []);
-
+    console.log(game);
     const callPutGenre = async (genres) => {
         setLoading(true);
-        const response = await gameServices.putGameGenre(game.gameID, genres);
+        const response = await gameServices.putGameGenre(game.id, genres);
         if (response.data.isSuccess === true) {
             const timerId = setTimeout(() => {
                 clearTimeout(timerId);

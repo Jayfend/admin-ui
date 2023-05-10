@@ -19,7 +19,7 @@ export default function NewGenre() {
         setNotify('Thay đổi thông tin thành công');
         const timeOut = setTimeout(() => {
             clearTimeout(timeOut);
-            navigate('/list-game');
+            navigate('/list-genre');
         }, 700);
     };
 

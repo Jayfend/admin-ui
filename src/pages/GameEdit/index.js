@@ -21,6 +21,7 @@ const EditGame = () => {
     useEffect(() => {
         const profileApi = async () => {
             const result = await gameService.getProfileGame(id);
+            console.log(result);
             setGame(result);
         };
         profileApi();
@@ -108,9 +109,9 @@ const EditGame = () => {
             game.discount = Number(dis);
         }
 
-        const status = active ? 1 : 0;
+        const status = active ? true : false;
         const variable = {
-            GameID: game.gameID,
+            GameID: game.id,
             Name: game.name,
             Price: game.price,
             Discount: game.discount,
@@ -127,7 +128,7 @@ const EditGame = () => {
 
         if (image) {
             newImg({
-                GameID: game.gameID,
+                GameID: game.id,
                 ThumbnailImage: image,
                 Caption: game.name,
                 isDefault: true,

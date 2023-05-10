@@ -158,8 +158,13 @@ export const getGenre = async (id) => {
 };
 
 export const putGenre = async (genres) => {
+    const jwt_token = Cookies.get('jwt-admin');
     try {
-        const res = await httpRequest.put(`Categories`, genres);
+        const res = await httpRequest.put(`Categories`, genres, {
+            headers: {
+                Authorization: `Bearer ${jwt_token}`
+            }
+        });
         return res;
     } catch (error) {
         console.log(error);
@@ -167,8 +172,13 @@ export const putGenre = async (genres) => {
 };
 
 export const postNewGenre = async (genre) => {
+    const jwt_token = Cookies.get('jwt-admin');
     try {
-        const res = await httpRequest.post(`Categories`, genre);
+        const res = await httpRequest.post(`Categories`, genre, {
+            headers: {
+                Authorization: `Bearer ${jwt_token}`
+            }
+        });
         return res;
     } catch (error) {
         console.log(error);

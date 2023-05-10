@@ -28,7 +28,6 @@ function Row(props) {
         };
         fetchApi();
     }, []);
-
     return (
         <React.Fragment>
             <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
@@ -64,8 +63,8 @@ function Row(props) {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {order[row]?.listgame.map((gameRow) => (
-                                        <TableRow key={gameRow.gameID}>
+                                    {order[row]?.listgame.map((gameRow, index) => (
+                                        <TableRow key={gameRow.id}>
                                             <TableCell align="right"></TableCell>
                                             <TableCell>{gameRow.name}</TableCell>
                                             <TableCell>
@@ -104,7 +103,6 @@ export default function RecentOrder() {
         };
         fetchApi();
     }, []);
-
     return (
         <>
             <Grid container spacing={3}>

@@ -83,7 +83,7 @@ function Dash() {
                             <Typography variant="h3">Tổng thu nhập</Typography>
                         </Stack>
                     </Box>
-                    <Income />
+                    {/* <Income /> */}
                 </MainCard>
             </Grid>
             <Grid item xs={12} md={12} lg={7}>
