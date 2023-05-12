@@ -62,21 +62,6 @@ export const postNewGame = async (game) => {
     }
 };
 
-export const postNewIMG = async (img) => {
-    const formdata = new FormData();
-    formdata.append('GameID', img.GameID);
-    formdata.append('ImageFile', img.ThumbnailImage);
-    formdata.append('Caption', img.Caption);
-    formdata.append('isDefault', img.isDefault);
-    formdata.append('SortOrder', img.SortOrder);
-    try {
-        const res = await httpRequest.post(`Games/${img.GameID}/Images`, formdata);
-        return res;
-    } catch (error) {
-        console.log(error);
-    }
-};
-
 export const putGame = async (game) => {
     const formdata = new FormData();
     formdata.append('GameID', game.GameID);
@@ -111,6 +96,27 @@ export const putGame = async (game) => {
     }
 };
 
+export const postNewIMG = async (img) => {
+    const formdata = new FormData();
+    formdata.append('GameID', 0);
+    formdata.append('ImageFile', img.ThumbnailImage);
+    formdata.append('Caption', img.Caption);
+    formdata.append('isDefault', img.isDefault);
+    formdata.append('SortOrder', img.SortOrder);
+
+    const jwt_token = Cookies.get('jwt-admin');
+    try {
+        const res = await httpRequest.post(`Games/${img.GameID}/Images`, formdata, {
+            headers: {
+                Authorization: `Bearer ${jwt_token}`
+            }
+        });
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export const putGameGenre = async (id, genres) => {
     try {
         const jwt_token = Cookies.get('jwt-admin');
@@ -138,6 +144,36 @@ export const deleteGame = async (id) => {
         console.log(error);
     }
 };
+
+export const getGameIMG = async (id) => {
+    try {
+        const res = await httpRequest.get(`games/${id}/images`);
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export const putGameIMG = async (img) => {
+    const formdata = new FormData();
+    formdata.append('ImageFile', img.newIMG);
+    formdata.append('Caption', img.caption);
+    formdata.append('isDefault', img.isDefault);
+    formdata.append('SortOrder', img.sortOrder);
+
+    const jwt_token = Cookies.get('jwt-admin');
+    try {
+        const res = await httpRequest.put(`games/${img.gameID}/images/${img.imageID}`, formdata, {
+            headers: {
+                Authorization: `Bearer ${jwt_token}`
+            }
+        });
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 // Genre
 export const getAllGenre = async () => {
     try {

@@ -93,16 +93,45 @@ const NewGame = () => {
         };
         const response = await gameServices.postNewGame(game);
 
-        if (response?.gameID) {
-            setLoading(false);
-            setNotify(response.message);
-        } else {
+        const img1 = await gameServices.postNewIMG({
+            GameID: response.data.id,
+            ThumbnailImage: image,
+            Caption: 'Ảnh số 1',
+            isDefault: false,
+            SortOrder: 2
+        });
+        const img2 = await gameServices.postNewIMG({
+            GameID: response.data.id,
+            ThumbnailImage: image,
+            Caption: 'Ảnh số 2',
+            isDefault: false,
+            SortOrder: 3
+        });
+        const img3 = await gameServices.postNewIMG({
+            GameID: response.data.id,
+            ThumbnailImage: image,
+            Caption: 'Ảnh số 3',
+            isDefault: false,
+            SortOrder: 4
+        });
+        const img4 = await gameServices.postNewIMG({
+            GameID: response.data.id,
+            ThumbnailImage: image,
+            Caption: 'Ảnh số 4',
+            isDefault: false,
+            SortOrder: 5
+        });
+
+        if (response?.data) {
             setNotify('Tạo game thành công');
             const timerId = setTimeout(() => {
                 clearTimeout(timerId);
                 setLoading(false);
                 navigate(config.routes.listGame, { replace: true });
             }, 700);
+        } else {
+            setLoading(false);
+            setNotify(response.message);
         }
     };
 
@@ -187,19 +216,23 @@ const NewGame = () => {
                             Soundcard: values.SRRSoundcard ? values.SRRSoundcard : 'DirectX 9.0c compatible sound card with latest drivers'
                         };
                         if (genreSelect) {
-                            createGame(
-                                values.gameName,
-                                values.price,
-                                values.discount,
-                                values.description,
-                                values.gameplay,
-                                genreSelect,
-                                status,
-                                image,
-                                fileGame,
-                                values.SRM,
-                                values.SRR
-                            );
+                            if (image) {
+                                createGame(
+                                    values.gameName,
+                                    values.price,
+                                    values.discount,
+                                    values.description,
+                                    values.gameplay,
+                                    genreSelect,
+                                    status,
+                                    image,
+                                    fileGame,
+                                    values.SRM,
+                                    values.SRR
+                                );
+                            } else {
+                                setNotify('Bạn chưa chọn ảnh cho sản phẩm');
+                            }
                         } else {
                             setNotify('Bạn chưa chọn thể loại');
                         }

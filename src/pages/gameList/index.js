@@ -89,9 +89,9 @@ export default function GameTable() {
     };
 
     const handleClick = (event, name, gameID) => {
-        // if (confirm('Bạn chắc chắn xoá game: ' + name + '?')) {
-        //     deleteApi(gameID);
-        // }
+        if (confirm('Bạn chắc chắn xoá game: ' + name + '?')) {
+            deleteApi(gameID);
+        }
     };
     const onClickGenre = (event, id) => {
         navigate('/edit-game-genre/' + id);

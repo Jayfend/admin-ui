@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Box, Button, Grid, InputLabel, Stack, LinearProgress, Input, Typography, Switch, Alert } from '@mui/material';
 
 import AnimateButton from 'components/@extended/AnimateButton';
-import * as gameService from 'services/gameServices';
+import * as gameServices from 'services/gameServices';
 
 // ============================|| FIREBASE - REGISTER ||============================ //
 
@@ -11,25 +11,27 @@ const EditGame = () => {
     const { id } = useParams();
     const [loading, setLoading] = useState(false);
     const [err, setErr] = useState();
-    const [image, setImage] = useState();
     const [notify, setNotify] = useState();
     const [fileGame, setFileGame] = useState();
     const [game, setGame] = useState();
+    const [listImg, setListImg] = useState([]);
     const [active, setActive] = useState(true);
     const navigate = useNavigate();
 
     useEffect(() => {
         const profileApi = async () => {
-            const result = await gameService.getProfileGame(id);
-            console.log(result);
+            const result = await gameServices.getProfileGame(id);
             setGame(result);
         };
-        profileApi();
-    }, []);
 
-    const newImg = async (img) => {
-        const imgNew = await gameService.postNewIMG(img);
-    };
+        const getGameIMG = async () => {
+            const result = await gameServices.getGameIMG(id);
+            setListImg(result);
+        };
+
+        profileApi();
+        getGameIMG();
+    }, []);
 
     const handleActive = (event) => {
         setActive(event.target.checked);
@@ -56,10 +58,40 @@ const EditGame = () => {
         setGame(newGame);
     };
 
-    const handleChangeIMG = (e) => {
+    const [thumb, setThumb] = useState();
+    const [image1, setImage1] = useState();
+    const [image2, setImage2] = useState();
+    const [image3, setImage3] = useState();
+    const [image4, setImage4] = useState();
+
+    const handleChangeThumb = (e) => {
         const file = e.target.files[0];
         file.preview = URL.createObjectURL(file);
-        setImage(file);
+        setThumb(file);
+    };
+
+    const handleChangeIMG1 = (e) => {
+        const file = e.target.files[0];
+        file.preview = URL.createObjectURL(file);
+        setImage1(file);
+    };
+
+    const handleChangeIMG2 = (e) => {
+        const file = e.target.files[0];
+        file.preview = URL.createObjectURL(file);
+        setImage2(file);
+    };
+
+    const handleChangeIMG3 = (e) => {
+        const file = e.target.files[0];
+        file.preview = URL.createObjectURL(file);
+        setImage3(file);
+    };
+
+    const handleChangeIMG4 = (e) => {
+        const file = e.target.files[0];
+        file.preview = URL.createObjectURL(file);
+        setImage4(file);
     };
 
     const handleChangeFile = (e) => {
@@ -70,14 +102,17 @@ const EditGame = () => {
 
     useEffect(() => {
         return () => {
-            image && URL.revokeObjectURL(image.url);
+            thumb && URL.revokeObjectURL(thumb.url);
+            image1 && URL.revokeObjectURL(image1.url);
+            image2 && URL.revokeObjectURL(image2.url);
+            image3 && URL.revokeObjectURL(image3.url);
+            image4 && URL.revokeObjectURL(image4.url);
         };
-    }, [image]);
+    }, [thumb, image1, image2, image3, image4]);
 
     const updateGame = async (gameAPI) => {
         setLoading(true);
 
-        console.log(gameAPI);
         if (gameAPI.Name == '' || gameAPI.Price == null || gameAPI.Description == '' || gameAPI.Gameplay == '') {
             setErr('error');
             setNotify('Không được để trống trường dữ liệu có đánh *');
@@ -86,7 +121,7 @@ const EditGame = () => {
                 setLoading(false);
             }, 700);
         } else {
-            const response = await gameService.putGame(gameAPI);
+            const response = await gameServices.putGame(gameAPI);
             if (response.status == 200) {
                 setErr('success');
                 setNotify('Thành công');
@@ -94,22 +129,60 @@ const EditGame = () => {
                     clearTimeout(timerId);
                     setLoading(false);
                     navigate('/list-game');
-                }, 700);
+                }, 1000);
             } else {
                 setLoading(false);
             }
         }
     };
 
+    const updateIMG = async () => {
+        setLoading(true);
+
+        if (listImg.length === 0) return;
+        if (thumb) {
+            const response = await gameServices.putGameIMG({ ...listImg[0], newIMG: thumb });
+            if (response.status !== 200) {
+                setNotify('Có lỗi khi đổi ảnh');
+            }
+        }
+        if (image1) {
+            const response = await gameServices.putGameIMG({ ...listImg[1], newIMG: image1 });
+            if (response.status !== 200) {
+                setNotify('Có lỗi khi đổi ảnh');
+            }
+        }
+        if (image2) {
+            const response = await gameServices.putGameIMG({ ...listImg[2], newIMG: image2 });
+            if (response.status !== 200) {
+                setNotify('Có lỗi khi đổi ảnh');
+            }
+        }
+        if (image3) {
+            const response = await gameServices.putGameIMG({ ...listImg[3], newIMG: image3 });
+            if (response.status !== 200) {
+                setNotify('Có lỗi khi đổi ảnh');
+            }
+        }
+        if (image4) {
+            const response = await gameServices.putGameIMG({ ...listImg[4], newIMG: image4 });
+            if (response.status !== 200) {
+                setNotify('Có lỗi khi đổi ảnh');
+            }
+        }
+
+        setLoading(false);
+    };
+
     const onSubmit = (e) => {
         e.preventDefault();
+        updateIMG();
 
         if (game.discount > 100) {
             var dis = game.discount.toString().slice(0, 2);
             game.discount = Number(dis);
         }
 
-        const status = active ? true : false;
         const variable = {
             GameID: game.id,
             Name: game.name,
@@ -118,23 +191,13 @@ const EditGame = () => {
             Description: game.description,
             Publisher: game.publisher,
             Gameplay: game.gameplay,
-            // ThumbnailImage: image,
+            // ThumbnailImage: thumb,
             FileGame: fileGame,
-            Status: status,
+            Status: active ? true : false,
             SRM: game.srm,
             SRR: game.srr
         };
         updateGame(variable);
-
-        if (image) {
-            newImg({
-                GameID: game.id,
-                ThumbnailImage: image,
-                Caption: game.name,
-                isDefault: true,
-                SortOrder: 2
-            });
-        }
     };
 
     return (
@@ -235,16 +298,42 @@ const EditGame = () => {
                         </Grid>
                         <Grid item xs={5}>
                             <Stack spacing={1}>
-                                <InputLabel htmlFor="imgIp">Hình</InputLabel>
-                                <Input id="imgIp" type="file" name="img" onChange={handleChangeIMG} />
-                            </Stack>
-                        </Grid>
-                        <Grid item xs={5}>
-                            <Stack spacing={1}>
                                 <InputLabel htmlFor="fileGame">File Game</InputLabel>
                                 <Input id="fileGame" type="file" name="fileGame" onChange={handleChangeFile} />
                             </Stack>
                         </Grid>
+                        <Grid item xs={5}>
+                            <Stack spacing={1}>
+                                <InputLabel htmlFor="imgIp">Hình Thumbnail</InputLabel>
+                                <Input id="imgIp" type="file" name="img" onChange={handleChangeThumb} />
+                            </Stack>
+                        </Grid>
+                        <>
+                            <Grid item xs={3}>
+                                <Stack spacing={1}>
+                                    <InputLabel htmlFor="imgIp">Hình 1</InputLabel>
+                                    <Input id="imgIp" type="file" name="img" onChange={handleChangeIMG1} />
+                                </Stack>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <Stack spacing={1}>
+                                    <InputLabel htmlFor="imgIp">Hình 2</InputLabel>
+                                    <Input id="imgIp" type="file" name="img" onChange={handleChangeIMG2} />
+                                </Stack>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <Stack spacing={1}>
+                                    <InputLabel htmlFor="imgIp">Hình 3</InputLabel>
+                                    <Input id="imgIp" type="file" name="img" onChange={handleChangeIMG3} />
+                                </Stack>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <Stack spacing={1}>
+                                    <InputLabel htmlFor="imgIp">Hình 4</InputLabel>
+                                    <Input id="imgIp" type="file" name="img" onChange={handleChangeIMG4} />
+                                </Stack>
+                            </Grid>
+                        </>
                         <Grid item xs={6}>
                             <Stack spacing={1}>
                                 <InputLabel>Cấu hình tối thiểu</InputLabel>

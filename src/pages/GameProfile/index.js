@@ -71,7 +71,7 @@ const ProfileGame = () => {
                     <Grid item xs={12}>
                         <Stack spacing={1}>
                             <InputLabel>Hình</InputLabel>
-                            <ImageList sx={{ height: 180 }} cols={5} rowHeight={164}>
+                            <ImageList sx={{ height: 400 }} cols={5} rowHeight={164}>
                                 {game.listImage.map((item, index) => (
                                     <ImageListItem key={index}>
                                         <img
