@@ -32,11 +32,16 @@ const NewGame = () => {
     const [active, setActive] = useState(true);
     const [genreName, setGenreName] = useState();
     const [genreSelect, setgenreSelect] = useState('');
+    const [publisherList, setPublisherList] = useState();
+    const [publisherSelect, setPublisherSelect] = useState('');
     const [image, setImage] = useState();
     const [fileGame, setFileGame] = useState();
 
     const handleChangeSelectGenre = (event) => {
         setgenreSelect(event.target.value);
+    };
+    const handleChangeSelectPublisher = (event) => {
+        setPublisherSelect(event.target.value);
     };
 
     useEffect(() => {
@@ -45,6 +50,15 @@ const NewGame = () => {
             setGenreName(result);
         };
         getGenreName();
+    }, []);
+
+    useEffect(() => {
+        const getPublisher = async () => {
+            const result = await gameServices.getPublisher();
+            setPublisherList(result);
+            console.log(result);
+        };
+        getPublisher();
     }, []);
 
     const handleActive = (event) => {
@@ -75,7 +89,20 @@ const NewGame = () => {
         };
     }, [fileGame]);
 
-    const createGame = async (GameName, Price, Discount, Description, Gameplay, Genre, Status, ThumbnailImage, fileGame, SRM, SRR) => {
+    const createGame = async (
+        GameName,
+        Price,
+        Discount,
+        Description,
+        Publisher,
+        Gameplay,
+        Genre,
+        Status,
+        ThumbnailImage,
+        fileGame,
+        SRM,
+        SRR
+    ) => {
         setLoading(true);
         // Make Api call
         const game = {
@@ -83,6 +110,7 @@ const NewGame = () => {
             Price: Price,
             Discount: Discount,
             Description: Description,
+            PublisherId: Publisher,
             Gameplay: Gameplay,
             Genre: Genre,
             Status: Status,
@@ -152,6 +180,7 @@ const NewGame = () => {
                     price: 0,
                     discount: 0,
                     description: '',
+                    publisher: '',
                     gameplay: '',
                     genre: 1,
                     thumbnailImage: '',
@@ -222,6 +251,7 @@ const NewGame = () => {
                                     values.price,
                                     values.discount,
                                     values.description,
+                                    publisherSelect,
                                     values.gameplay,
                                     genreSelect,
                                     status,
@@ -363,6 +393,13 @@ const NewGame = () => {
                                 </Stack>
                             </Grid>
 
+                            <Grid item xs={2}>
+                                <Stack spacing={1}>
+                                    <InputLabel>Active ?</InputLabel>
+                                    <Switch checked={active} onChange={handleActive} inputProps={{ 'aria-label': 'controlled' }} />
+                                </Stack>
+                            </Grid>
+
                             <Grid item xs={4}>
                                 <Stack spacing={1}>
                                     <InputLabel id="genre">Thể loại *</InputLabel>
@@ -386,10 +423,26 @@ const NewGame = () => {
                                 </Stack>
                             </Grid>
 
-                            <Grid item xs={8}>
+                            <Grid item xs={4}>
                                 <Stack spacing={1}>
-                                    <InputLabel>Active ?</InputLabel>
-                                    <Switch checked={active} onChange={handleActive} inputProps={{ 'aria-label': 'controlled' }} />
+                                    <InputLabel id="Publishers">Nhà phát hành *</InputLabel>
+                                    <FormControl fullWidth>
+                                        <Select
+                                            labelId="Publishers"
+                                            id="simple-select"
+                                            value={publisherSelect}
+                                            label="Publishers"
+                                            onChange={(e) => {
+                                                handleChangeSelectPublisher(e);
+                                            }}
+                                        >
+                                            {publisherList?.map((p) => (
+                                                <MenuItem key={p.id} value={p.id}>
+                                                    {p.name}
+                                                </MenuItem>
+                                            ))}
+                                        </Select>
+                                    </FormControl>
                                 </Stack>
                             </Grid>
 

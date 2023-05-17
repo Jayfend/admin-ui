@@ -35,10 +35,12 @@ export const postNewGame = async (game) => {
     formdata.append('Price', game.Price);
     formdata.append('Discount', game.Discount);
     formdata.append('Description', game.Description);
+    formdata.append('PublisherId', game.PublisherId);
     formdata.append('Gameplay', game.Gameplay);
     formdata.append('Genre', game.Genre);
     formdata.append('Status', game.Status);
     formdata.append('ThumbnailImage', game.ThumbnailImage);
+    formdata.append('FileGame', game.FileGame);
     formdata.append('SRM.OS', game.SRM.OS);
     formdata.append('SRM.Processor', game.SRM.Processor);
     formdata.append('SRM.Memory', game.SRM.Memory);
@@ -53,7 +55,6 @@ export const postNewGame = async (game) => {
     formdata.append('SRR.Storage', game.SRR.Storage);
     formdata.append('SRR.AdditionalNotes', game.SRR.AdditionalNotes);
     formdata.append('SRR.Soundcard', game.SRR.Soundcard);
-
     try {
         const res = await httpRequest.post(`Games`, formdata);
         return res;
@@ -69,7 +70,7 @@ export const putGame = async (game) => {
     formdata.append('Price', game.Price);
     formdata.append('Discount', game.Discount);
     formdata.append('Description', game.Description);
-    formdata.append('Publisher', game.Publisher);
+    formdata.append('PublisherId', game.PublisherId);
     formdata.append('Gameplay', game.Gameplay);
     formdata.append('Status', game.Status);
     formdata.append('ThumbnailImage', game.ThumbnailImage);
@@ -215,6 +216,17 @@ export const postNewGenre = async (genre) => {
                 Authorization: `Bearer ${jwt_token}`
             }
         });
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+// Publisher
+
+export const getPublisher = async () => {
+    try {
+        const res = await httpRequest.get(`publisher`);
         return res;
     } catch (error) {
         console.log(error);

@@ -21,6 +21,8 @@ const ProfileGame = () => {
         };
         profileApi();
     }, []);
+    console.log(game);
+
     return (
         game !== undefined && (
             <>

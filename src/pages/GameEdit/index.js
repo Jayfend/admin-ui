@@ -189,7 +189,7 @@ const EditGame = () => {
             Price: game.price,
             Discount: game.discount,
             Description: game.description,
-            Publisher: game.publisher,
+            PublisherId: game.publisherId,
             Gameplay: game.gameplay,
             // ThumbnailImage: thumb,
             FileGame: fileGame,
@@ -266,7 +266,7 @@ const EditGame = () => {
                             </Stack>
                         </Grid>
 
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <Stack spacing={1}>
                                 <InputLabel htmlFor="publisher">Nhà phát hành</InputLabel>
                                 <Input
@@ -277,7 +277,7 @@ const EditGame = () => {
                                     }}
                                 ></Input>
                             </Stack>
-                        </Grid>
+                        </Grid> */}
                         <Grid item xs={12}>
                             <Stack spacing={1}>
                                 <InputLabel htmlFor="gameplay">Lối chơi *</InputLabel>
