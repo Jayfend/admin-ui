@@ -1,5 +1,6 @@
 import { httpRequest } from 'utils/index';
 import Cookies from 'js-cookie';
+import genre from 'menu-items/genre';
 
 export const getGameTable = async (index, page) => {
     try {
@@ -30,15 +31,14 @@ export const getProfileGame = async (id) => {
 
 export const postNewGame = async (game) => {
     const formdata = new FormData();
-    formdata.append('FileGame', game.FileGame);
     formdata.append('GameName', game.GameName);
     formdata.append('Price', game.Price);
     formdata.append('Discount', game.Discount);
     formdata.append('Description', game.Description);
-    formdata.append('PublisherId', game.PublisherId);
     formdata.append('Gameplay', game.Gameplay);
-    formdata.append('Genre', game.Genre);
+    game.GenreList.forEach((genre) => formdata.append('GenreList', genre));
     formdata.append('Status', game.Status);
+    formdata.append('PublisherId', game.PublisherId);
     formdata.append('ThumbnailImage', game.ThumbnailImage);
     formdata.append('FileGame', game.FileGame);
     formdata.append('SRM.OS', game.SRM.OS);
@@ -55,6 +55,8 @@ export const postNewGame = async (game) => {
     formdata.append('SRR.Storage', game.SRR.Storage);
     formdata.append('SRR.AdditionalNotes', game.SRR.AdditionalNotes);
     formdata.append('SRR.Soundcard', game.SRR.Soundcard);
+
+    console.log(game.GenreList);
     try {
         const res = await httpRequest.post(`Games`, formdata);
         return res;
@@ -65,7 +67,7 @@ export const postNewGame = async (game) => {
 
 export const putGame = async (game) => {
     const formdata = new FormData();
-    formdata.append('GameID', game.GameID);
+    formdata.append('id', game.GameID);
     formdata.append('Name', game.Name);
     formdata.append('Price', game.Price);
     formdata.append('Discount', game.Discount);
@@ -74,7 +76,6 @@ export const putGame = async (game) => {
     formdata.append('Gameplay', game.Gameplay);
     formdata.append('Status', game.Status);
     formdata.append('ThumbnailImage', game.ThumbnailImage);
-    formdata.append('FileGame', game.FileGame);
     formdata.append('SRM.OS', game.SRM.os);
     formdata.append('SRM.Processor', game.SRM.processor);
     formdata.append('SRM.Memory', game.SRM.memory);
@@ -89,6 +90,7 @@ export const putGame = async (game) => {
     formdata.append('SRR.Storage', game.SRR.storage);
     formdata.append('SRR.AdditionalNotes', game.SRR.additionalNotes);
     formdata.append('SRR.Soundcard', game.SRR.soundcard);
+    formdata.append('FileGame', game.FileGame);
     try {
         const res = await httpRequest.put(`Games/${game.GameID}`, formdata);
         return res;
@@ -227,6 +229,19 @@ export const postNewGenre = async (genre) => {
 export const getPublisher = async () => {
     try {
         const res = await httpRequest.get(`publisher`);
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+export const postPublisher = async (publisher) => {
+    const jwt_token = Cookies.get('jwt-admin');
+    try {
+        const res = await httpRequest.post(`publisher`, publisher, {
+            headers: {
+                Authorization: `Bearer ${jwt_token}`
+            }
+        });
         return res;
     } catch (error) {
         console.log(error);

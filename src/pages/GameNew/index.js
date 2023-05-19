@@ -31,7 +31,7 @@ const NewGame = () => {
     const [notify, setNotify] = useState('');
     const [active, setActive] = useState(true);
     const [genreName, setGenreName] = useState();
-    const [genreSelect, setgenreSelect] = useState('');
+    const [genreSelect, setgenreSelect] = useState([]);
     const [publisherList, setPublisherList] = useState();
     const [publisherSelect, setPublisherSelect] = useState('');
     const [image, setImage] = useState();
@@ -43,7 +43,6 @@ const NewGame = () => {
     const handleChangeSelectPublisher = (event) => {
         setPublisherSelect(event.target.value);
     };
-
     useEffect(() => {
         const getGenreName = async () => {
             const result = await gameServices.getAllGenre();
@@ -56,7 +55,6 @@ const NewGame = () => {
         const getPublisher = async () => {
             const result = await gameServices.getPublisher();
             setPublisherList(result);
-            console.log(result);
         };
         getPublisher();
     }, []);
@@ -112,15 +110,17 @@ const NewGame = () => {
             Description: Description,
             PublisherId: Publisher,
             Gameplay: Gameplay,
-            Genre: Genre,
+            GenreList: [...Genre],
             Status: Status,
             ThumbnailImage: ThumbnailImage,
             FileGame: fileGame,
             SRM: SRM,
             SRR: SRR
         };
+        // console.log(game);
+        // return;
         const response = await gameServices.postNewGame(game);
-
+        // console.log(response);
         const img1 = await gameServices.postNewIMG({
             GameID: response.data.id,
             ThumbnailImage: image,
@@ -208,24 +208,6 @@ const NewGame = () => {
                 onSubmit={(values, { setErrors, setStatus, setSubmitting }) => {
                     try {
                         const status = active ? true : false;
-                        // values.SRM = {
-                        //     OS: values.SRMOS,
-                        //     Processor: values.SRMProcessor,
-                        //     Memory: values.SRMMemory,
-                        //     Graphics: values.SRMGraphics,
-                        //     Storage: values.SRMStorage,
-                        //     AdditionalNotes: values.SRMAdditionalNotes,
-                        //     Soundcard: values.SRMSoundcard
-                        // };
-                        // values.SRR = {
-                        //     OS: values.SRROS,
-                        //     Processor: values.SRRProcessor,
-                        //     Memory: values.SRRMemory,
-                        //     Graphics: values.SRRGraphics,
-                        //     Storage: values.SRRStorage,
-                        //     AdditionalNotes: values.SRRAdditionalNotes,
-                        //     Soundcard: values.SRRSoundcard
-                        // };
                         values.SRM = {
                             OS: values.SRMOS ? values.SRMOS : 'Windows® 10 64 Bit (latest update)',
                             Processor: values.SRRProcessor ? values.SRRProcessor : 'AMD FX 6300 @ 3.5 Ghz or Intel Core i5-2400 @ 3.1 Ghz.',
@@ -244,7 +226,7 @@ const NewGame = () => {
                             AdditionalNotes: values.SRRAdditionalNotes ? values.SRRAdditionalNotes : 'Phiên bản 11',
                             Soundcard: values.SRRSoundcard ? values.SRRSoundcard : 'DirectX 9.0c compatible sound card with latest drivers'
                         };
-                        if (genreSelect) {
+                        if (genreSelect !== []) {
                             if (image) {
                                 createGame(
                                     values.gameName,
@@ -408,6 +390,7 @@ const NewGame = () => {
                                             labelId="genre"
                                             id="simple-select"
                                             value={genreSelect}
+                                            multiple
                                             label="Genre"
                                             onChange={(e) => {
                                                 handleChangeSelectGenre(e);

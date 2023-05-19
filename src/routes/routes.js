@@ -21,6 +21,10 @@ import GameGenre from 'pages/GameGenre/index';
 import GameGenreEdit from 'pages/GenreEdit/index';
 import GameNewGenre from 'pages/GenreNew/index';
 import GenreList from 'pages/GenreList/index';
+//Publisher
+import PublisherNew from 'pages/PublisherNew/index';
+import PublisherView from 'pages/PublisherView/index';
+import PublisherEdit from 'pages/PublisherEdit/index';
 
 const adminRoutes = [
     { path: config.routes.dashboard, component: Dash },
@@ -41,7 +45,11 @@ const adminRoutes = [
     { path: config.routes.newUser, component: NewUser },
     { path: config.routes.editUser, component: EditUser },
     { path: config.routes.userRole, component: UserRole },
-    { path: config.routes.userProfile, component: UserProfile }
+    { path: config.routes.userProfile, component: UserProfile },
+    //Publisher
+    { path: config.routes.newPublisher, component: PublisherNew },
+    { path: config.routes.listPublisher, component: PublisherView },
+    { path: config.routes.publisherEdit, component: PublisherEdit }
 ];
 
 const authRoutes = [{ path: config.routes.login, component: Login }];

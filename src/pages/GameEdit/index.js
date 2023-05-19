@@ -17,7 +17,6 @@ const EditGame = () => {
     const [listImg, setListImg] = useState([]);
     const [active, setActive] = useState(true);
     const navigate = useNavigate();
-
     useEffect(() => {
         const profileApi = async () => {
             const result = await gameServices.getProfileGame(id);
@@ -122,6 +121,7 @@ const EditGame = () => {
             }, 700);
         } else {
             const response = await gameServices.putGame(gameAPI);
+            console.log(gameAPI);
             if (response.status == 200) {
                 setErr('success');
                 setNotify('Thành công');
@@ -191,11 +191,11 @@ const EditGame = () => {
             Description: game.description,
             PublisherId: game.publisherId,
             Gameplay: game.gameplay,
-            // ThumbnailImage: thumb,
-            FileGame: fileGame,
             Status: active ? true : false,
+            // ThumbnailImage: thumb,
             SRM: game.srm,
             SRR: game.srr
+            // FileGame: fileGame
         };
         updateGame(variable);
     };
@@ -349,7 +349,7 @@ const EditGame = () => {
                             <Stack spacing={1}>
                                 <InputLabel>Hệ điều hành</InputLabel>
                                 <Input
-                                    value={game?.srm?.os ? game?.srm?.os : ''}
+                                    value={game?.srm?.os ? game?.srm?.os : 'Windows® 10 64 Bit (latest update)'}
                                     name="os"
                                     onChange={(e) => {
                                         handleChangeSRM(e);
@@ -362,7 +362,7 @@ const EditGame = () => {
                                 <InputLabel>Hệ điều hành</InputLabel>
                                 <Input
                                     name="os"
-                                    value={game?.srr?.os ? game?.srr?.os : ''}
+                                    value={game?.srr?.os ? game?.srr?.os : 'Windows® 10 64 Bit (latest update)'}
                                     onChange={(e) => {
                                         handleChangeSRR(e);
                                     }}
@@ -373,7 +373,11 @@ const EditGame = () => {
                             <Stack spacing={1}>
                                 <InputLabel>Bộ vi xử lý</InputLabel>
                                 <Input
-                                    value={game?.srm?.processor ? game?.srm?.processor : ''}
+                                    value={
+                                        game?.srm?.processor
+                                            ? game?.srm?.processor
+                                            : 'AMD FX 6300 @ 3.5 Ghz or Intel Core i5-2400 @ 3.1 Ghz.'
+                                    }
                                     name="processor"
                                     onChange={(e) => {
                                         handleChangeSRM(e);
@@ -386,7 +390,11 @@ const EditGame = () => {
                                 <InputLabel>Bộ vi xử lý</InputLabel>
                                 <Input
                                     name="processor"
-                                    value={game?.srr?.processor ? game?.srr?.processor : ''}
+                                    value={
+                                        game?.srr?.processor
+                                            ? game?.srr?.processor
+                                            : 'AMD FX 6300 @ 3.5 Ghz or Intel Core i5-2400 @ 3.1 Ghz.'
+                                    }
                                     onChange={(e) => {
                                         handleChangeSRR(e);
                                     }}
@@ -395,9 +403,9 @@ const EditGame = () => {
                         </Grid>
                         <Grid item xs={6}>
                             <Stack spacing={1}>
-                                <InputLabel>Bộ nhớ</InputLabel>
+                                <InputLabel>RAM</InputLabel>
                                 <Input
-                                    value={game?.srm?.memory ? game?.srm?.memory : ''}
+                                    value={game?.srm?.memory ? game?.srm?.memory : '8 GB RAM'}
                                     name="memory"
                                     onChange={(e) => {
                                         handleChangeSRM(e);
@@ -407,10 +415,10 @@ const EditGame = () => {
                         </Grid>
                         <Grid item xs={6}>
                             <Stack spacing={1}>
-                                <InputLabel>Bộ nhớ</InputLabel>
+                                <InputLabel>RAM</InputLabel>
                                 <Input
                                     name="memory"
-                                    value={game?.srr?.memory ? game?.srr?.memory : ''}
+                                    value={game?.srr?.memory ? game?.srr?.memory : '8 GB RAM'}
                                     onChange={(e) => {
                                         handleChangeSRR(e);
                                     }}
@@ -421,7 +429,9 @@ const EditGame = () => {
                             <Stack spacing={1}>
                                 <InputLabel>Bộ sử lý đồ họa</InputLabel>
                                 <Input
-                                    value={game?.srm?.graphics ? game?.srm?.graphics : ''}
+                                    value={
+                                        game?.srm?.graphics ? game?.srm?.graphics : 'AMD R9 280x (3 GB) or NVIDIA GeForce GTX 660 (2 GB)'
+                                    }
                                     name="graphics"
                                     onChange={(e) => {
                                         handleChangeSRM(e);
@@ -434,7 +444,9 @@ const EditGame = () => {
                                 <InputLabel>Bộ sử lý đồ họa</InputLabel>
                                 <Input
                                     name="graphics"
-                                    value={game?.srr?.graphics ? game?.srr?.graphics : ''}
+                                    value={
+                                        game?.srr?.graphics ? game?.srr?.graphics : 'AMD R9 280x (3 GB) or NVIDIA GeForce GTX 660 (2 GB)'
+                                    }
                                     onChange={(e) => {
                                         handleChangeSRR(e);
                                     }}
@@ -443,9 +455,9 @@ const EditGame = () => {
                         </Grid>
                         <Grid item xs={6}>
                             <Stack spacing={1}>
-                                <InputLabel>Bộ nhớ</InputLabel>
+                                <InputLabel>Lưu trữ</InputLabel>
                                 <Input
-                                    value={game?.srm?.storage ? game?.srm?.storage : ''}
+                                    value={game?.srm?.storage ? game?.srm?.storage : '33 GB chỗ trống khả dụng'}
                                     name="storage"
                                     onChange={(e) => {
                                         handleChangeSRM(e);
@@ -455,10 +467,10 @@ const EditGame = () => {
                         </Grid>
                         <Grid item xs={6}>
                             <Stack spacing={1}>
-                                <InputLabel>Bộ nhớ</InputLabel>
+                                <InputLabel>Lưu trữ</InputLabel>
                                 <Input
                                     name="storage"
-                                    value={game?.srr?.storage ? game?.srr?.storage : ''}
+                                    value={game?.srr?.storage ? game?.srr?.storage : '33 GB chỗ trống khả dụng'}
                                     onChange={(e) => {
                                         handleChangeSRR(e);
                                     }}
@@ -467,9 +479,9 @@ const EditGame = () => {
                         </Grid>
                         <Grid item xs={6}>
                             <Stack spacing={1}>
-                                <InputLabel>Bộ nhớ trống</InputLabel>
+                                <InputLabel>Ghi chú thêm</InputLabel>
                                 <Input
-                                    value={game?.srm?.additionalNotes ? game?.srm?.additionalNotes : ''}
+                                    value={game?.srm?.additionalNotes ? game?.srm?.additionalNotes : 'Phiên bản 11'}
                                     name="additionalNotes"
                                     onChange={(e) => {
                                         handleChangeSRM(e);
@@ -479,10 +491,10 @@ const EditGame = () => {
                         </Grid>
                         <Grid item xs={6}>
                             <Stack spacing={1}>
-                                <InputLabel>Bộ nhớ trống</InputLabel>
+                                <InputLabel>Ghi chú thêm</InputLabel>
                                 <Input
                                     name="additionalNotes"
-                                    value={game?.srr?.additionalNotes ? game?.srr?.additionalNotes : ''}
+                                    value={game?.srr?.additionalNotes ? game?.srr?.additionalNotes : 'Phiên bản 11'}
                                     onChange={(e) => {
                                         handleChangeSRR(e);
                                     }}
@@ -493,7 +505,11 @@ const EditGame = () => {
                             <Stack spacing={1}>
                                 <InputLabel>Bộ xử lý âm thanh</InputLabel>
                                 <Input
-                                    value={game?.srm?.soundcard ? game?.srm?.soundcard : ''}
+                                    value={
+                                        game?.srm?.soundcard
+                                            ? game?.srm?.soundcard
+                                            : 'DirectX 9.0c compatible sound card with latest drivers'
+                                    }
                                     name="soundcard"
                                     onChange={(e) => {
                                         handleChangeSRM(e);
@@ -506,7 +522,11 @@ const EditGame = () => {
                                 <InputLabel>Bộ xử lý âm thanh</InputLabel>
                                 <Input
                                     name="soundcard"
-                                    value={game?.srr?.soundcard ? game?.srr?.soundcard : ''}
+                                    value={
+                                        game?.srr?.soundcard
+                                            ? game?.srr?.soundcard
+                                            : 'DirectX 9.0c compatible sound card with latest drivers'
+                                    }
                                     onChange={(e) => {
                                         handleChangeSRR(e);
                                     }}

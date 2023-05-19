@@ -14,7 +14,10 @@ const routes = {
     newGenre: '/new-genre',
     listGenre: '/list-genre',
     genreEdit: '/edit-genre/:id',
-
+    //Publisher
+    newPublisher: '/new-publisher',
+    listPublisher: '/list-publisher',
+    publisherEdit: '/edit-publisher/:id',
     // User
     user: '/user',
     editUser: '/edit-user/:id',
