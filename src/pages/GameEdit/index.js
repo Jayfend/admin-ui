@@ -20,12 +20,15 @@ const EditGame = () => {
     useEffect(() => {
         const profileApi = async () => {
             const result = await gameServices.getProfileGame(id);
-            setGame(result);
+            if (result) {
+                setGame(result);
+                setActive(result.status);
+            }
         };
 
         const getGameIMG = async () => {
             const result = await gameServices.getGameIMG(id);
-            setListImg(result);
+            if (result) setListImg(result);
         };
 
         profileApi();
