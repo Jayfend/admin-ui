@@ -14,7 +14,7 @@ const publisher = {
     children: [
         {
             id: 'list-publisher',
-            title: 'Danh sách Nhà phát',
+            title: 'Danh sách Nhà phát hành',
             type: 'item',
             url: '/list-publisher',
             icon: icons.GrUnorderedList,
@@ -22,7 +22,7 @@ const publisher = {
         },
         {
             id: 'new-publisher',
-            title: 'Thêm Nhà phát mới',
+            title: 'Thêm Nhà phát hành mới',
             type: 'item',
             url: '/new-publisher',
             icon: icons.GrAddCircle,
