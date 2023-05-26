@@ -48,7 +48,7 @@ export const isLoggedIn = () => {
 
 export const register = async (account) => {
     try {
-        const res = await httpRequest.post('Users/register', account);
+        const res = await httpRequest.post('Users/adminregister', account);
         return res.data;
     } catch (error) {
         if (error.code === 'ERR_NETWORK') {
